@@ -1,6 +1,6 @@
 import React from 'react';
-import './button.css';
-
+// import './button.css';
+import {ButtonLearn} from './ButtonStyles'
 export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -27,22 +27,35 @@ export interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button: React.FC<ButtonProps> = ({
+ export const Button: React.FC<ButtonProps> = ({
   primary = false,
   size = 'medium',
   backgroundColor,
   label,
   ...props
 }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  // const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const padding = {
+    medium:'11px 20px',
+    large:'12px 24px',
+    small:'10px 16px',
+  }
+  const fontSize = {
+    medium:'14px',
+    large:'16px',
+    small:'12px'
+  }
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+    <ButtonLearn
+      padding={padding[size]}
+      fontSize={fontSize[size]}
       style={{ backgroundColor }}
+      primary={primary}
       {...props}
     >
       {label}
-    </button>
+    </ButtonLearn>
   );
 };
+
+// export default Button
