@@ -1,0 +1,10 @@
+.storybook-avatar {
+    border: 0;
+    width: 4em;
+    height: 4em;
+    position: relative;
+    border-radius: 100%;
+    border: 1px solid #F8F8F8;
+    cursor: pointer;
+    display: inline-block;
+}
